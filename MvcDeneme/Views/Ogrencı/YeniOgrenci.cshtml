@@ -1,0 +1,34 @@
+﻿@model MvcDeneme.Models.EntitiyFramework.TBLOGRENCILER
+@{
+    ViewBag.Title = "YeniOgrenci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <form method="post" class="form-group">
+        <div style="margin-top:10px">
+            <label>Öğrenci Adı</label>
+            <input type="text" name="OGRAD" class="form-control" />
+        </div>
+        <div style="margin-top:10px">
+            <label>Öğrenci Soyadı</label>
+            <input type="text" name="OGRSOYAD" class="form-control" />
+        </div>
+        <div style="margin-top:10px">
+            <label>Öğrenci Fotoğrafı</label>
+            <input type="text" name="OGRFOTO" class="form-control" />
+        </div>
+        <div style="margin-top:10px">
+            <label>Öğrenci Cinsiyeti</label>
+            <input type="text" name="OGRCINSIYET" class="form-control" />
+        </div>
+        <div style="margin-top:10px">
+            <label>Öğrenci Kulüp</label>
+            @Html.DropDownListFor(M => M.TBLKULUPLER.KULUPID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        </div>
+
+        <div style="margin-top:10px">
+            <button class="btn btn-success">Öğrenci Ekle</button>
+        </div>
+
+    </form>
+</div>

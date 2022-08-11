@@ -1,0 +1,35 @@
+﻿@model MvcDeneme.Models.EntitiyFramework.TBLOGRENCILER
+@{
+    ViewBag.Title = "OgrenciGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Ogrencı", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(o => o.OGRAD)
+        @Html.TextBoxFor(o => o.OGRAD, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(o => o.OGRSOYAD)
+        @Html.TextBoxFor(o => o.OGRSOYAD, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(o => o.OGRFOTO)
+        @Html.TextBoxFor(o => o.OGRFOTO, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(o => o.OGRKULUP)
+        @*  @Html.TextBoxFor(o => o.OGRKULUP, new { @class = "form-control" })*@
+        @Html.DropDownListFor(M => M.TBLKULUPLER.KULUPID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(o => o.OGRCINSIYET)
+        @Html.TextBoxFor(o => o.OGRCINSIYET, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(o => o.OGRENCIID)
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}
+

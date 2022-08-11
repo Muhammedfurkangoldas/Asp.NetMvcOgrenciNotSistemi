@@ -1,0 +1,43 @@
+﻿@using MvcDeneme.Models.EntitiyFramework;
+@model List<TBLNOTLAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>NOT ID</th>
+        <th>DERS ID</th>
+        <th>OGR ID</th>
+        <th>1.SINAV</th>
+        <th>2.SINAV</th>
+        <th>3.SINAV</th>
+        <th>PROJE</th>
+        <th>ORTALAMA</th>
+        <th>DURUM</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+
+      @foreach (var snv in Model)
+       {
+        <tr>
+            <td>@snv.NOTID</td>
+            <td>@snv.DERSID</td>
+            <td>@snv.OGRID</td>
+            <td>@snv.SINAV1</td>
+            <td>@snv.SINAV2</td>
+            <td>@snv.SINAV3</td>
+            <td>@snv.PROJE</td>
+            <td>@snv.ORTALAMA</td>
+            <td>@snv.DURUM</td>
+            <td><a href="/SınavNot/SınavNotGetir/@snv.NOTID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+       }
+        
+    </tbody>
+</table>
+<a href="/SınavNot/YeniSinav" class="btn btn-info">Yeni Sınav Girişi</a>
+
+
